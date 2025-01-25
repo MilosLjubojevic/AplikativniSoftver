@@ -1,0 +1,171 @@
+pita 1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+double aritmetickaSredina(int niz[10]){
+    int suma = 0;
+    double arsr = 0;
+    for(int i = 0; i < 10; i++){
+        suma = suma + niz[i];
+    }
+    arsr = suma / float(10);
+    return arsr;
+}
+
+int main()
+{
+    cout << fixed;
+    cout << setprecision(2);
+
+    int niz[10];
+    double aritmSr, tempNiz[10], razlika=0;
+
+    for(int i = 0; i < 10; i++){
+        cout << "Unesite " << i+1 << " element niza." << endl;
+        cin >> niz[i];
+    }
+
+    aritmSr = aritmetickaSredina(niz);
+    cout << "Aritmeticka sredina niza je: " << aritmSr << endl;
+
+    for(int i = 0; i < 10; i++){
+        if(aritmSr > niz[i])
+            razlika = aritmSr - niz[i];
+        else
+            razlika = niz[i] - aritmSr;
+
+        tempNiz[i] = razlika;
+    }
+
+    double najmanji = tempNiz[0];
+    int indeks;
+
+    for(int i = 1; i< 10; i++){
+        if(tempNiz[i] < najmanji){
+            najmanji = tempNiz[i];
+            indeks = niz[i];
+        }
+    }
+
+    cout << "Clan niza koji je najblizi aritmetickoj sredini je: " << indeks << endl;
+
+    return 0;
+}
+
+
+
+pita 2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    string Ime, Prezime, Otac="Petar", PunoIme, PunoImeOtac;
+    
+    cout << "Unesite vase ime: ";
+    getline(cin, Ime);
+    cout << "Unesite vase prezime: ";
+    getline(cin, Prezime);
+    cout << "Unesite ime oca: ";
+    getline(cin, Otac);
+    
+    cout << "\nVase ime sadrzi " << Ime.length() << " znakova\n";
+    cout << "Vase prezime sadrzi " << Prezime.length() << " znakova\n";
+    cout << "Vasi inicijali su " << Ime[0] << Prezime[0];
+    
+    PunoIme = Ime + " " + Prezime;
+    PunoImeOtac = Ime + " " + Otac + " " + Prezime;
+    
+    cout << "\n\nVase puno ime:" << PunoIme;
+    cout << "\nVase ime i ime oca:" << PunoImeOtac;
+}
+
+
+pita 3!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class PrevoznoSredstvo{
+public:
+    string proizvodjac, namena;
+    int godinaProizvodnje;
+    PrevoznoSredstvo(){};
+
+    void ispisiPodatke(){
+        cout << "Proizvodjac: " << proizvodjac << endl;
+        cout << "Namena: " << namena << endl;
+        cout << "Godina proizvodnje: " << godinaProizvodnje << endl;
+    }
+
+    virtual prevozno(string proiz, string nam, int godina){
+        proizvodjac = proiz;
+        namena = nam;
+        godinaProizvodnje = godina;
+    }
+};
+
+class Vozila{
+public:
+    int snagaMotora, brojSjedista;
+    string vrstaGoriva;
+    Vozila(){};
+
+    void podaciVozila(){
+        cout << "Snaga motora: " << snagaMotora << endl;
+        cout << "Broj sjedista: " << brojSjedista << endl;
+        cout << "Vrsta goriva: " << vrstaGoriva << endl;
+    }
+
+    virtual unosPodataka(int snaga, int brojSj, string vrstaG){
+        snagaMotora = snaga;
+        brojSjedista = brojSj;
+        vrstaGoriva = vrstaG;
+    }
+};
+
+class Automobil: public PrevoznoSredstvo, public Vozila{
+
+};
+
+
+int main()
+{
+    string proizv, namen;
+    int godinaPr;
+    cout << "Unesite naziv proizvodjaca: " << endl;
+    getline(cin, proizv);
+    cout << "Unesite namenu: " << endl;
+    getline(cin, namen);
+    cout << "Unesite godinu proizvodnje:" << endl;
+    cin >> godinaPr;
+
+    string vrstaGoriva;
+    int snagaMotora, brojSjedista;
+    cout << "Unesite snagu motora: " << endl;
+    cin >> snagaMotora;
+    cout << "Unesite broj sjedista:" << endl;
+    cin >> brojSjedista;
+    cout << "Unesite vrstu goriva; " << endl;
+    cin.ignore();
+    getline(cin, vrstaGoriva);
+
+    Automobil car;
+
+    car.prevozno(proizv, namen, godinaPr);
+    car.unosPodataka(snagaMotora, brojSjedista, vrstaGoriva);
+    car.ispisiPodatke();
+    car.podaciVozila();
+
+
+    return 0;
+}
+
