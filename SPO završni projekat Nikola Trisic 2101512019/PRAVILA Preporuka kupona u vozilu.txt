@@ -1,0 +1,89 @@
+=== Run information ===.
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     in-vehicle-coupon-recommendation-weka.filters.unsupervised.attribute.StringToNominal-R7-weka.filters.unsupervised.attribute.StringToNominal-R9-weka.filters.unsupervised.attribute.NumericToNominal-Rfirst-last
+Instances:    12684
+Attributes:   26
+              destination
+              passanger
+              weather
+              temperature
+              time
+              coupon
+              expiration
+              gender
+              age
+              maritalStatus
+              has_children
+              education
+              occupation
+              income
+              car
+              Bar
+              CoffeeHouse
+              CarryAway
+              RestaurantLessThan20
+              Restaurant20To50
+              toCoupon_GEQ5min
+              toCoupon_GEQ15min
+              toCoupon_GEQ25min
+              direction_same
+              direction_opp
+              Y
+Test mode:    90-fold cross-validation
+Evaluation cost matrix:
+ 0 1
+ 1 0
+
+
+=== Classifier model for fold 90 ===
+
+JRIP rules:
+===========
+
+1(expiration = 2h) and (passanger = Alone) and (direction_same = 0) and (destination = Home) => Y=0 (604.0/144.0)
+2(coupon = Bar) and (Bar = never) => Y=0 (823.0/155.0)
+3(expiration = 2h) and (destination = Work) and (direction_same = 0) => Y=0 (588.0/165.0)
+4(CoffeeHouse = never) and (coupon = Coffee House) => Y=0 (755.0/160.0)
+5(expiration = 2h) and (passanger = Alone) and (time = 10PM) => Y=0 (179.0/70.0)
+6(coupon = Restaurant(20-50)) and (expiration = 2h) => Y=0 (342.0/122.0)
+7(coupon = Restaurant(20-50)) and (Restaurant20To50 = never) => Y=0 (139.0/47.0)
+8(toCoupon_GEQ15min = 1) and (passanger = Alone) and (Bar = less1) and (coupon = Bar) and (CarryAway = 4~8) => Y=0 (58.0/15.0)
+9(expiration = 2h) and (destination = Work) and (temperature = 55) => Y=0 (122.0/42.0)
+10(CoffeeHouse = less1) and (coupon = Coffee House) and (time = 6PM) => Y=0 (200.0/81.0)
+11(coupon = Restaurant(20-50)) and (Restaurant20To50 = less1) => Y=0 (467.0/230.0)
+12(expiration = 2h) and (CarryAway = less1) and (income = $87500 - $99999) => Y=0 (53.0/15.0)
+13(coupon = Bar) and (Bar = less1) and (gender = Female) => Y=0 (281.0/102.0)
+14(expiration = 2h) and (CarryAway = gt8) and (Bar = gt8) and (age = 26) => Y=0 (27.0/0.0)
+15(toCoupon_GEQ15min = 1) and (coupon = Coffee House) and (expiration = 2h) and (time = 6PM) => Y=0 (35.0/9.0)
+16(expiration = 2h) and (time = 2PM) and (CoffeeHouse = less1) and (education = Bachelors degree) and (coupon = Coffee House) => Y=0 (31.0/10.0)
+17=> Y=1 (7840.0/2077.0)
+
+Number of Rules : 17
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        9173               72.3195 %
+Incorrectly Classified Instances      3511               27.6805 %
+Kappa statistic                          0.4273
+Total Cost                            3511     
+Average Cost                             0.2768
+Mean absolute error                      0.3879
+Root mean squared error                  0.4439
+Relative absolute error                 79.0624 %
+Root relative squared error             89.616  %
+Total Number of Instances            12684     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,618    0,197    0,705      0,618    0,658      0,430    0,724     0,673     0
+                 0,803    0,382    0,735      0,803    0,767      0,430    0,724     0,721     1
+Weighted Avg.    0,723    0,302    0,722      0,723    0,720      0,430    0,724     0,700     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 3381 2093 |    a = 0
+ 1418 5792 |    b = 1
