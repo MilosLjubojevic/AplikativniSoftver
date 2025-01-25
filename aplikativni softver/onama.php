@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>o nama</title>
+   <title>O nama</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -38,7 +38,7 @@
 <!-- header sekcija zavrsava -->
 
 <div class="heading" style="background:url(images/header-bg-1.png) no-repeat">
-   <h1>o nama</h1>
+   <h1>O nama</h1>
 </div>
 
 <!-- about section starts  -->
@@ -50,21 +50,21 @@
    </div>
 
    <div class="content">
-      <h3>zasto izabrati nas?</h3>
+      <h3>Zašto putovati sa nama?</h3>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure numquam nulla iusto corporis dolor commodi libero, vitae obcaecati optio rerum ab culpa nesciunt, earum mollitia quasi ipsam non. Aliquid, iure.</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid rerum, delectus voluptate aliquam quaerat iusto repellendus error nulla ab atque.</p>
       <div class="icons-container">
          <div class="icons">
             <i class="fas fa-map"></i>
-            <span>najbolje destinacije</span>
+            <span>Najpopularnije lokacije</span>
          </div>
          <div class="icons">
             <i class="fas fa-hand-holding-usd"></i>
-            <span>prihvatljive cijene</span>
+            <span>Jeftina putovanja</span>
          </div>
          <div class="icons">
             <i class="fas fa-headset"></i>
-            <span>24/7 usluge vodica</span>
+            <span>24/7 usluge vodiča</span>
          </div>
       </div>
    </div>
@@ -169,10 +169,10 @@
 
       <div class="box">
          <h3>brzi linkovi</h3>
-         <a href="pocetna.php"> <i class="fas fa-angle-right"></i> pocetna</a>
-         <a href="onama.php"> <i class="fas fa-angle-right"></i> o nama</a>
-         <a href="ponude.php"> <i class="fas fa-angle-right"></i> ponude</a>
-         <a href="rezervisi.php"> <i class="fas fa-angle-right"></i> rezervisi</a>
+         <a href="pocetna.php"> <i class="fas fa-angle-right"></i> Početna</a>
+         <a href="onama.php"> <i class="fas fa-angle-right"></i> O nama</a>
+         <a href="ponude.php"> <i class="fas fa-angle-right"></i> Ponude</a>
+         <a href="rezervisi.php"> <i class="fas fa-angle-right"></i> Rezervacija</a>
       </div>
 
       <div class="box">
@@ -180,15 +180,15 @@
          <a href="#"> <i class="fas fa-angle-right"></i> postavite pitanje</a>
          <a href="#"> <i class="fas fa-angle-right"></i> o nama</a>
          <a href="#"> <i class="fas fa-angle-right"></i> polisa privatnosti</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> pravila koristenja</a>
+         <a href="#"> <i class="fas fa-angle-right"></i> pravila korištenja</a>
       </div>
 
       <div class="box">
          <h3>kontakt</h3>
-         <a href="#"> <i class="fas fa-phone"></i> +387-66-111-222 </a>
-         <a href="#"> <i class="fas fa-phone"></i> +387-55-222-333 </a>
-         <a href="#"> <i class="fas fa-envelope"></i>trisa.zvezdas@gmail.com </a>
-         <a href="#"> <i class="fas fa-map"></i> bijeljina  </a>
+         <a href="#"> <i class="fas fa-phone"></i> +387-65-001-222 </a>
+         <a href="#"> <i class="fas fa-phone"></i> +387-66-978-345 </a>
+         <a href="#"> <i class="fas fa-envelope"></i>ale3xcz@gmail.com </a>
+         <a href="#"> <i class="fas fa-map"></i> Bijeljina  </a>
       </div>
 
       <div class="box">
@@ -202,7 +202,7 @@
    </div>
 
    
-   <div class="credit"> napravio <span>Nikola Trisic</span> | sva prava rezervisana! </div>
+   <div class="credit"> napravio <span>Aleksandar Bogdanovic</span> | sva prava rezervisana! </div>
 
 
 </section>
