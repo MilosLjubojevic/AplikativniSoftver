@@ -1,0 +1,62 @@
+<html>
+<head>
+
+<title>CSS Image Map</title>
+
+<style type="text/css">
+
+
+#photo {
+	width: 300px;
+	height: 224px;
+	position: relative;
+	background-image: url(images/fruity_cones.jpg);
+	background-repeat: no-repeat;
+}
+
+#photo ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+#photo a {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	text-indent: -1000em;
+}
+
+#photo a:hover {
+  border: 1px solid #fff;
+}
+
+#photo .apple a {
+	top: 29px;
+	left: 95px;
+}
+
+#photo .orange a {
+	top: 131px;
+	left: 152px;
+}
+
+#photo .banana a {
+	top: 50px;
+	left: 41px;
+}
+
+</style>
+</head>
+
+<body>
+<div id="photo">
+<ul>
+<li class="apple"><a href="http://www.bestapples.com" title="Washington Apples">Washington Apples</a></li>
+<li class="orange"><a href="http://www.floridaorange.com" title="Florida Oranges">Florida Oranges</a></li>
+<li class="banana"><a href="http://www.floridaorange.com" title="Barbados Bananas">Barbados Bananas</a></li>
+</ul>
+</div>
+</body>
+</html>

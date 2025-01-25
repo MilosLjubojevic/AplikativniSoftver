@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Unos i validacija elemenata</title>
+
+ <script>
+ 
+  var i = 0;
+  var Niz = new Array();
+  
+  function proveriPodatke() {
+    var uzorakIme =/^[A-Za-z]+$/;       // bez naših slova
+    ime = document.forma.Ime.value
+    if (uzorakIme.test(ime)){
+       return true;
+    }else {
+       alert("Neispravno ime: "+ime);
+       return false;
+    }
+  }
+  
+  function dodajElement() {
+    if (proveriPodatke()) {
+       Niz[i] = document.getElementById("Ime").value;
+	   alert("Unesen element: " + Niz[i]);
+	   i = i + 1;
+       document.getElementById("Ime").value = "";
+	}
+  }
+  
+  function prikaziPodatake() {
+    var element = "<hr/>";        
+    for (var j=0; j<Niz.length; j++) {
+       element += j+1 + ". " + Niz[j] + "<br/>";
+    }
+    document.getElementById("Prikaz").innerHTML = element;
+  }
+ </script>
+ 
+</head>
+<body>
+ Unesi ime:
+ <form name="forma">
+  <input type="text" id="Ime"></input>
+  <input type="button" id="dodaj" value="Dodaj" onclick="dodajElement();"></input>
+  <input type="button" id="prikazi" value="Prikazi sve" onclick="prikaziPodatake();"></input>
+ </form>
+ <br />Uneseni podaci:
+ <div id="Prikaz"></div> 
+ 
+ </body>
+</html>

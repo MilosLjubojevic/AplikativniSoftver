@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+ <title>Validacija forme pomoću regex</title>
+ <script type="text/javascript">   
+   function proveraPostBroja(broj){
+	var uzorakPB =/^[1-9]\d{4}$/;
+   	if (uzorakPB.test(broj.value)){ // ili broj.match(uzorakPB)
+        alert("Ispravan poštanski broj");
+        proveraPostBroja = true
+   	}else {
+        alert("Neispravan poštanski broj "+broj.value);
+        proveraPostBroja = false
+   	}
+   }
+ </script>
+</head>
+<body>
+ <form>
+  Poštanski broj:<br>
+  <input type="text" id=pbroj>
+  <input type="submit" onclick="proveraPostBroja(document.getElementById('pbroj'));" value="Potvrdi">
+ </form>
+</body>
+</html>

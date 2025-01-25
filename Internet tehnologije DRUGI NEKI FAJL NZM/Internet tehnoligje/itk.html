@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .input-wrapper {
+                margin-bottom: 15px;
+            }
+
+            #tabela {
+                display: none;
+            }
+
+            #tabela tbody tr:nth-child(2n) {
+                background-color: #DCD0FF;
+            }
+        </style>
+
+        <script>
+            const narudzbe = [];
+            const artiklRegex = /^[a-zA-Z0-9]{1,11}$/;
+            const kolicinaRegex = /^[1-9][0-9]?$/;
+            const cijenaRegex = /^[1-9](\.?)([0-9]{0,4})$/;
+            const adresaRegex = /^([a-zA-Z0-9](\/?)(\-?)(\s?)){1,20}$/;
+
+
+
+            function dodajArtikl() {
+                const artikl = document.getElementById('artikl');
+                const kolicina = document.getElementById('kolicina');
+                const cijena = document.getElementById('cijena');
+                const adresa = document.getElementById('adresa');
+
+                if (!artiklRegex.test(artikl.value)) {
+                    alert('Neispravan artikl');
+                    return;
+                }
+
+             
+                if (!kolicinaRegex.test(kolicina.value)) {
+                    alert('Neispravna kolicina');
+                    return;
+                }
+
+                
+                if (!cijenaRegex.test(cijena.value)) {
+                    alert('Neispravna cijena');
+                    return;
+                }
+
+                if (!adresaRegex.test(adresa.value)) {
+                    alert('Neispravna adresa');
+                    return;
+                }
+
+                const narudzba = {
+                    artikl: artikl.value,
+                    kolicina: kolicina.value,
+                    cijena: cijena.value,
+                    adresa: adresa.value,
+                    datum:  new Date().toISOString()
+                };
+
+                narudzbe.push(narudzba);
+
+                alert('Kreirali ste narudzbu');
+
+                artikl.value = "";
+                kolicina.value = "";
+                cijena.value = "";
+                adresa.value = "";
+
+                console.log(narudzbe);
+            }
+
+            function prikaziNarudzbu() {
+                const tabela = document.getElementById('tabela');
+                const tableBody = tabela.getElementsByTagName('tbody')[0];
+                
+
+                for (const narudzba of narudzbe) {
+                   const row = tableBody.insertRow();
+
+                   const artiklCell = row.insertCell();
+                   artiklCell.innerHTML = narudzba.artikl;
+
+                   const kolicinaCell= row.insertCell();
+                   kolicinaCell.innerHTML = narudzba.kolicina;
+
+                   const cijenaCell = row.insertCell();
+                   cijenaCell.innerHTML = narudzba.cijena;
+
+                   const adresaCell = row.insertCell();
+                   adresaCell.innerHTML = narudzba.adresa;
+
+                   const datumCell = row.insertCell();
+                   datumCell.innerHTML = narudzba.datum;
+                }
+
+
+                tabela.style.display = 'block';
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="input-wrapper">
+            <label>Artikl:</label>
+            <input id="artikl" />
+        </div>
+
+        <div class="input-wrapper">
+            <label>Kolicina:</label>
+            <input id="kolicina" type="number" />
+        </div>
+
+        <div class="input-wrapper">
+            <label>Cijena:</label>
+            <input id="cijena" type="number" />
+        </div>
+
+        <div class="input-wrapper">
+            <label>Adresa:</label>
+            <input id="adresa" />
+        </div>
+
+        <button onclick="dodajArtikl()">Dodaj artikl</button>
+        <button onclick="prikaziNarudzbu()">Prikazi narudzbu</button>
+
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <td>Artikl</td>
+                    <td>Kolicina</td>
+                    <td>Cijena</td>
+                    <td>Adresa</td>
+                    <td>Datum</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </body>
+</html>
+
+<!-- // kolicina, cijena, adresa -->
+
+
+            <!-- <select>
+                <option value="burek">burek</option>
+                <option value="sendvic">sendvic</option>
+                <option value="djevrek">djrevrek</option>
+            </select> -->

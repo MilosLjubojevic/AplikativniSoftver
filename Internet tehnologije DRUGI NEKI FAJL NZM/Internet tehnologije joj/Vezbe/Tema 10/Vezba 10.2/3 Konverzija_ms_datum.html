@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Date.parse()</h2>
+<p>Metod Date.parse(string) vreća broj milisekundi od 01.01.1970.</p>
+<p>Može se koristiti za pretvaranje sistemskog vremena u objekt datum.</p>
+
+<p id="demo"></p>
+
+<script>
+let msec = Date.parse("April 18, 2022 14:33:15.777"); // u obliku ms
+const d = new Date(msec);
+document.getElementById("demo").innerHTML = d;
+</script>
+
+</body>
+</html>

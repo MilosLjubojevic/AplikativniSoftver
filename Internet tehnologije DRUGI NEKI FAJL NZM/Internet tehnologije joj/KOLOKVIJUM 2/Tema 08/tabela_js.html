@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+ <title>Spisak</title>
+</head>
+<body>
+ <h2>Spisak</h2>
+ <script language="JavaScript">
+  spisak = [["Petar","Petrović","ppetar@gmail.com"],
+            ["Ivana","Ivanović","iivanovic@gmail.com"],
+            ["Marko","Marković","mmarkovic@gmail.com"]]
+  document.write("<table border=1><br>")
+  document.write("<tr> <th>Ime</th> <th>Prezime</th> <th>e-mail</th> </tr>")    
+  for (var i=0; i < spisak.length; i++) {
+    document.write("<tr>")
+	 document.write("<td>"+spisak[i][0]+"</td>")  // Ime
+     document.write("<td>"+spisak[i][1]+"</td>")  // Prezime
+     document.write("<td>"+spisak[i][2]+"</td>")  // eAdresa
+    document.write("</tr>")
+  }
+  document.write("</table>")
+ </script>
+</body>

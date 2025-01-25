@@ -1,0 +1,12 @@
+Primer zadatka za kolokvijum 2 (15 poena)
+-----------------------------------------
+
+1. Kreirati html stranicu za unos podataka o osobama putem  Veb forme.
+
+2. Veb forma treba da omogući unos podataka o imenu, prezimenu i matičnom broju osobe, kao i o datumu unosa.
+
+3. Koristeći regularne izraze, validirati sva polja forme, tako da ime i prezime budu alfanumerički dužine do 50 znakova, a matični broj niz cifara dužine 13 znakova (Vežba 10.3).
+
+4. Napraviti petlju za unos osoba, sve dok operater ne prekine unos, a svaku unesenu osobu zapamtiti u nizu Osobe.
+
+5. Sortirati niz Osobe po prezimenu (Vežba 10.1) i prikazati unesenu listu osoba preko html tabele (Vežba 8.4).

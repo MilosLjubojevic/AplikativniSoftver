@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Unos i validacija osoba</title>
+
+ <script>
+ 
+  var i = 0;
+  var Osobe = new Array();
+  
+  function proveriPodatke() {
+    var uzorakIme =/^[A-Za-z]+$/;       // bez naših slova
+	var uzorakMB = /^\d{13}$/;          // 13 cifara 0..9
+	
+	prez = document.forma.prezime.value;
+    ime = document.forma.ime.value;
+    mb = document.forma.jmbg.value;
+	
+	if (!uzorakIme.test(prez)){
+       alert("Neispravno prezime: " + prez);
+       return false;
+	} else if (!uzorakIme.test(ime)){
+       alert("Neispravno ime: " + ime);
+       return false;
+    } else if (!uzorakMB.test(mb)){
+       alert("Neispravan JMBG: " + mb);	
+       return false;
+    } else {
+       return true;
+    }
+  }
+  
+  function dodajElement() {
+    if (proveriPodatke()) { // Dodavanje objekta Osoba u niz
+	   prez = document.forma.prezime.value;
+       ime = document.forma.ime.value;
+       mb = document.forma.jmbg.value;
+	   osoba = new Array(prez, ime, mb);
+	   Osobe[i] = osoba;
+	   alert("Unesena osoba: " + Osobe[i][0] + " " + Osobe[i][1] + " " + Osobe[i][2]);
+	   i = i + 1;
+       document.forma.prezime.value = "";
+       document.forma.ime.value = "";
+       document.forma.jmbg.value = "";
+	}
+  }
+  
+  function prikaziPodatake() {
+    var tabela = "<hr/>";    
+	
+	Osobe.sort();  // Sortiranje po prvom polju
+	// Zaglavlje tabele
+	tabela += "<table border=1><br>"
+    tabela += "<tr> <th>Ime</th>" + 
+                    "<th>Prezime</th>" + 
+                    "<th>JMBG</th> </tr>"
+	// Redovi tablele				
+    for (var j=0; j<Osobe.length; j++) {
+       tabela += "<tr>";
+	   tabela += "<td>"+Osobe[j][0]+"</td>";  // ime
+       tabela += "<td>"+Osobe[j][1]+"</td>";  // prezime
+       tabela += "<td>"+Osobe[j][2]+"</td>";  // JMBG
+       tabela += "</tr>";
+    }
+    tabela += "</table>";	
+    document.getElementById("Prikaz").innerHTML = tabela;
+  }
+ </script>
+ 
+</head>
+<body>
+ Unesi podatke o osobi:<br /><br />
+ <form name="forma">
+  Prezime: <input type="text" id="prezime"></input>
+  Ime: <input type="text" id="ime"></input>
+  JMBG: <input type="text" id="jmbg"></input> <br /><br />
+  <input type="button" id="dodaj" value="Dodaj" onclick="dodajElement();"></input>
+  <input type="button" id="prikazi" value="Prikazi sve" onclick="prikaziPodatake();"></input>
+ </form>
+ <br />Uneseni podaci:
+ <div id="Prikaz"></div> 
+ 
+ </body>
+</html>
